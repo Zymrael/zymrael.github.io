@@ -46,7 +46,8 @@ a, table.table a {
 
 // Profile
 .desc{
-  font-style: italic;
+  color: rgb(93, 90, 143);
+  font-size: medium;
   margin-top: 0rem;
   margin-bottom: 1rem;
 }
@@ -272,7 +273,6 @@ footer.sticky-bottom {
 }
 .post-title {
   font-size: 28pt;
-  font-weight: bold;
 }
 .pagination {
   .page-item {
@@ -424,12 +424,6 @@ footer.sticky-bottom {
           font-style: normal;
           color:rgb(100, 130, 197);
         }
-      }
-      .award{
-
-      }
-      .secondary-badge{
-
       }
       .links{
 
