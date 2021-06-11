@@ -45,7 +45,11 @@ a, table.table a {
 }
 
 // Profile
-
+.desc{
+  font-style: italic;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+}
 .profile {
   margin-left: 1rem;
   width: 100%;
@@ -266,7 +270,10 @@ footer.sticky-bottom {
     }
   }
 }
-
+.post-title {
+  font-size: 28pt;
+  font-weight: bold;
+}
 .pagination {
   .page-item {
     .page-link {
@@ -312,6 +319,7 @@ footer.sticky-bottom {
   .card {
     img {
       width: 100%;
+      padding: 1rem;
     }
     .card-title {
       color: $black-color;
@@ -347,7 +355,7 @@ footer.sticky-bottom {
 // Publications
 
 .publications {
-  margin-top: 2rem;
+  margin-top: 1rem;
   h1 {
     color: var(--global-theme-color);
     font-size: 2rem;
@@ -362,7 +370,7 @@ footer.sticky-bottom {
     }
   }
   h2.year {
-    color: $grey-color-light;
+    color: $black-color;
     border-top: 1px solid $grey-color-light;
     padding-top: 1rem;
     margin-top: 2rem;
@@ -371,13 +379,13 @@ footer.sticky-bottom {
   }
   ol.bibliography {
     list-style: none;
-    padding: 0;
+    padding: -1rem;
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: -1rem;
       .abbr {
-        height: 2rem;
+        height: 0.1rem;
         margin-bottom: 0.5rem;
         abbr {
           display: inline-block;
@@ -385,7 +393,7 @@ footer.sticky-bottom {
           padding-left: 1rem;
           padding-right: 1rem;
           a {
-            color: white;
+            color: rgb(94, 28, 28);
             &:hover {
               text-decoration: none;
             }
@@ -398,8 +406,12 @@ footer.sticky-bottom {
       }
       .title {
         font-weight: bolder;
+        font-size: large;
+        color: rgb(41, 39, 39);
+        margin-bottom: 0.5rem;
       }
       .author {
+        margin-bottom: 0.2rem;
         a {
           border-bottom: 1px dashed var(--global-theme-color);
           &:hover {
@@ -410,7 +422,20 @@ footer.sticky-bottom {
         > em {
           border-bottom: 1px solid;
           font-style: normal;
+          color:rgb(100, 130, 197);
         }
+      }
+      .award{
+
+      }
+      .secondary-badge{
+
+      }
+      .links{
+
+      }
+      .periodical {
+        margin-top: 0rem;
       }
       .links {
         a.btn {
