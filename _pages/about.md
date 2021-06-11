@@ -14,7 +14,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 
 ---
-**Short bio:** <br/> I am a first-year Ph.D. student in Computer Science at Stanford University. Prior to joining Stanford, I have worked at NAVER AI and KAIST advised by Jinkyoo Park. I hold a Master's degree in Industrial and Systems Engineering from KAIST and a double Bachelor's in Control Theory and Automation Engineering from the University of Bologna and Tongji University.
+**Short bio:** <br/> I am a first-year Ph.D. student in Computer Science at Stanford University. Prior to joining Stanford, I have spent time at [NAVER AI](https://clova.ai/en/research/research-areas.html) and [KAIST SILAB](http://silab.kaist.ac.kr/), advised by Jinkyoo Park. I hold a Master's degree in Industrial and Systems Engineering from KAIST and a double Bachelor's in Control Theory and Automation Engineering from the University of Bologna and Tongji University.
 
 **Research:** <br/> My work spans topics in deep learning, dynamical systems, variational inference and numerical methods. I am broadly interested in ensuring the successes achieved by deep learning methods in computer vision and natural language are extended to other engineering domains. 
 
