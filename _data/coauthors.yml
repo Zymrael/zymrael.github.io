@@ -9,3 +9,15 @@
 "Park":
   - firstname: ["Jinkyoo", "J.", "J. P.", "Park Jinkyoo"]
     url: http://silab.kaist.ac.kr/our-team/
+
+"Garg":
+  - firstname: ["Animesh", "A.", "A. G.", "Animesh Garg"]
+    url: https://animesh.garg.tech/
+
+"Suzuki":
+  - firstname: ["Taiji", "T.", "T. S.", "Taiji Suzuki"]
+    url: http://ibis.t.u-tokyo.ac.jp/suzuki/
+
+"Ermon":
+  - firstname: ["Stefano", "S.", "S. E.", "Stefano Ermon"]
+    url: https://cs.stanford.edu/~ermon/
