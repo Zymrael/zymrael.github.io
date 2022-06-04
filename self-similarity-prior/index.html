@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Self.">
+  <meta name="keywords" content="Neural Implicit Representations, Fractals, Compression, Deep Generative Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self-Similarity Priors: Neural Collages as Differentiable Fractal Representations</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-size-3 publication-title">Self-Similarity Priors: <br/> Neural Collages as Differentiable Fractal Representations</h1>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">
+              <a href="https://zymrael.github.io/">Michael Poli*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://winniexu.ca/">Winnie Xu*</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://massastrello.github.io/">Stefano Massaroli*</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cs.stanford.edu/~chenlin/">Chenlin Meng</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="">Kuno Kim</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a><sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Stanford University, </span>
+            <span class="author-block"><sup>2</sup>University of Toronto, </span>
+            <span class="author-block"><sup>3</sup>University of Tokyo, </span>
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2204.07673#:~:text=Self%2DSimilarity%20Priors%3A%20Neural%20Collages%20as%20Differentiable%20Fractal%20Representations,-Michael%20Poli%2C%20Winnie&text=Many%20patterns%20in%20nature%20exhibit,described%20via%20self%2Dreferential%20transformations."
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ermongroup/self-similarity-prior"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Blog / TUtorial Link-->
+              <span class="link-block">
+                <a href="zymrael.github.io/blog/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-newspaper"></i>
+                  </span>
+                  <span>Blog</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h4 class="content has-text-centered is-size-14">
+        Representing <span class="deolive">data</span> as the <span class="dewine">parameters</span> of an iterative map: the <span class="deblue">collage operator</span>.
+      </h4>
+      <img src="./assets/diagram.svg", 
+      alt="Applications of Neural Collage Operators">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h3 class="content has-text-justified is-size-24">
+            <p>
+            <b>Intuition:</b> Data can be represented in a variety of ways: in the original space, 
+            via a collection of values (for example, pixels), or as a set of coefficients and bases functions (for example, Fourier coefficients and complex exponentials). Each method has advantages and disadvantages and is best suited 
+            for different data and applications. 
+          </p>
+
+          <p>
+            We investigate an alternative approach, which involves two steps. 
+            <br>
+            (1) Selection of a family of parametrized functions. We consider collage operators, a class of maps that require few parameters compared to data dimensionality, and that can capture self-similarity 
+            by relating two partitions of the data space (patches for images). 
+            <br>
+            (2) Given a data point, or a dataset, train an encoder produce the corresponding collage parameters. A <b>Neural Collage Operator</b> is comprised of both neural network encoder as well as collage operator as decoder.
+            <br>
+            We show how collage parameter representations can be used in various tasks.
+          </p>
+        </h3>
+        </div>
+      </div>
+      <img src="./assets/diagram.svg", 
+      alt="Applications of Neural Collage Operators">
+      </div>
+     </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Many patterns in nature exhibit self–similarity: they can be efficiently described via self–referential
+            transformations. This property is common in natural and artificial objects, such as molecules,
+            shorelines, galaxies and even images. In this work, we present a method to learn alternative representations of data designed to leverage similarity of regions within a single data point and across datasets, focusing on images.
+          </p>
+          <p>
+            To this end, 
+            We propose a novel approach to represent data as the parameters of an iterative map. We show that this approach is capable of capturing the self-similarity of a pattern, and that it can be used to represent a dataset of patterns. We also show that the iterative map can be used to represent a dataset of patterns.
+            
+            To this end, we design
+            a novel class of implicit operators, Neural Collages, which (1) represent data as the parameters of
+            a self–referential, structured transformation, and (2) employ hypernetworks to amortize the cost of
+            finding these parameters to a single forward pass. We investigate how to leverage the representations produced by Neural Collages in various tasks, including data compression and generation.
+            Neural Collage image compressors are orders of magnitude faster than other self–similarity–based
+            algorithms during encoding and offer compression rates competitive with implicit methods. Finally,
+            we showcase applications of Neural Collages for fractal art and as deep generative models.
+          </p>
+          <p>
+
+          </p>
+        </div>
+
+      </div>
+      <div class="column">
+        <h2 class="title is-3">In Code</h2>
+        <img src="./assets/diagram.svg", 
+        alt="Applications of Neural Collage Operators">
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </section>
+
+
+</body>
+</html>
