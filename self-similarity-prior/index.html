@@ -174,7 +174,7 @@
                     shorelines, galaxies and even images. This work develops a method to learn representations designed to maximally leverage self-similarity, both across regions of a single datum as well as across datasets.
                   </p>
                   <p>
-                    To this end, we propose to represent data as the parameters of a contractive, iterative map defined on partitions of the data space: the collage operator. Instead of performing extensive search for the set of parameters corresponding
+                    To this end, we propose to represent data as the parameters of a contractive, iterative map defined on partitions of the data space: the collage operator. Instead of performing an extensive search for the set of parameters corresponding
                     to each element, we use a neural network encoder to amortize the cost to a single forward pass. We refer to the encoder and collage operator together as a Neural Collage.
                   </p>
                   <p>
@@ -206,7 +206,7 @@
             to produce collage parameters corresponding to data.
           </p>
           <p>  
-          A <b>Neural Collage</b> is comprised of both neural network encoder as well as collage operator as decoder. 
+          A <b>Neural Collage</b> is comprised of both a neural network encoder as well as a collage operator as decoder. 
           </p>
           </div>
 
@@ -304,7 +304,7 @@
             <div class="content has-text-justified">
               <p>The resolution of each patch does not matter, as each affine map is broadcasted to all pixels. This allows the collage operator to be 
                 applied to data of different resolutions. The detail introduced in higher resolution images reflects the structure of the collage operator: 
-                when the entire image as used as an input patch, a fractal effect. With high enough resolutions, multiple levels of "fractalness" can be observed.
+                when the entire image is used as an input patch, a fractal effect. With high enough resolutions, multiple levels of "fractalness" can be observed.
               </p>
             </div>
 
@@ -343,8 +343,8 @@
                 we show the decoding steps of a collage operator. 
               </p>
               <p>
-                Increasing the size output patches reduces the accuracy and requires significantly smaller number of floats to represent the image, resulting in high compression ratios.
-                This example does not employ techniques used in our Neural Collage compression experiments, such as training on random crops and bit-packing collage parameters. Thank you DALLE-2 for the image!
+                Increasing the size of output patches reduces the accuracy and requires significantly smaller number of floats to represent the image, resulting in high compression ratios.
+                This example does not employ techniques used in our Neural Collage compression experiments, such as introducing auxiliary patches, augmentations, and bit-packing collage parameters. Thank you DALLE-2 for the image!
               </p>
                </p>
 
@@ -429,7 +429,7 @@
     <h4 class="title is-4">Neural Collages as Image Compressors</h4> 
     <div class="content has-text-justified">
       <p>
-      We train Neural Collages on random crops of a datasets of high-resolution aerial images. At test time, we use pretrained encoder to compress images of different resolutions by applying it to
+      We train Neural Collages on random crops of a datasets of high-resolution aerial images. At test time, we use a pretrained encoder to compress images of different resolutions by applying it to
       each crop individually. Compression only requires a single forward pass of a Neural Collage encoder, resulting in several orders of magnitude speedups over fractal compression and COIN.
       </p>
       <p>
@@ -481,7 +481,7 @@
         <div class="content has-text-justified">
           <p>
           Neural Collages can fractalize images (see Gradio demo at the top of this page). To obtain this effect, train a restricted Neural Collage without source domain partitioning on a reconstruction objective i.e., with the only input patch being the entire image.
-          Fractalizing (including training) takes less than a minute seconds on a single GPU. Follow the notebook tutorial for more details!  
+          Fractalizing (including training) takes less than a minute on a single GPU. Follow the notebook tutorial for more details!  
         </p>
           <p>
             No author was harmed during the generation of these animations.
