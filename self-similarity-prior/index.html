@@ -196,7 +196,7 @@
             </p>
           <p>
             Although the standard in deep learning is to stack learned transformations on data, a "good" representation for the input is often the key to improved performance and more efficient, smaller models. To give a few examples:
-            transformers, diffusion models, implicit neural representations (SIREN, NeRF, COIN) and frequency-domain models (FNOs, T1) all rely to a different extent on preprocessing / augmenting inputs and their domains (for example, grids of pixel locations). 
+            transformers, diffusion models, implicit neural representations (<a href="https://arxiv.org/abs/2006.09661">SIREN</a>, <a href="https://arxiv.org/abs/2003.08934">NeRF</a>, <a href="https://arxiv.org/abs/2103.03123">COIN</a>) and frequency-domain models (<a href="https://arxiv.org/abs/2010.08895">FNOs</a>, T1) all rely to a different extent on preprocessing / augmenting inputs and their domains (for example, grids of pixel locations). 
             The design space here involves parametrization of the input domains, positional encoding schemes, and choice of frequency-domain transforms. 
           </p>
           <p>
@@ -289,10 +289,10 @@
         <div class ="columns is-centered has-text-centered">
 
           <div class="column is-6">
-            <h4 class="title is-5">Short parametrization</h4>
+            <h4 class="title is-5">Compact parametrization</h4>
             <div class="content has-text-justified">
-              <p>Collages require only two scalar parameters for each combination of input and output patches. In the paper, we formalize generalized collage operators as an instance of "iterated function system"
-                 clarifying some of the details. In practice we broadcast the "scalar" affine map to each pixel in the patch. 
+              <p>Based on our selection of affine maps (note: other functions may also be selected), Collages can be represented with just two scalar parameters acting on each combination of input and output patches. 
+                 This work formalizes collage operators as an instance of a "partitioned iterated function system"; please see our paper for further details. In practice, the "scalar" affine map is broadcasted to each pixel of the patch in consideration.
 
               </p>
             </div>
@@ -300,11 +300,12 @@
             
           </div>
           <div class="column is-6">
-            <h4 class="title is-5">Resolution independent</h4> 
+            <h4 class="title is-5">Resolution independence</h4> 
             <div class="content has-text-justified">
-              <p>The resolution of each patch does not matter, as each affine map is broadcasted to all pixels. This allows the collage operator to be 
-                applied to data of different resolutions. The detail introduced in higher resolution images reflects the structure of the collage operator: 
-                when the entire image is used as an input patch, a fractal effect. With high enough resolutions, multiple levels of "fractalness" can be observed.
+              <p>
+                Since each affine map is broadcasted to all pixels, it maps each source to a range patch via a scalar multiple that is independent of the resolution or the dimensions of the patch being transformed.
+                This allows the collage operator to be applied in a resolution-agnostic manner. The mosaic, fractal-like details introduced when decoding at higher resolutions reflect the structure of the collage operator: 
+                 when the entire image is provided as an input patch, multiple levels of "fractalness" can be observed.
               </p>
             </div>
 
@@ -333,7 +334,7 @@
         </div>
         </div>
 
-        <h4 class="title is-5">Partitions matter</h4> 
+        <h4 class="title is-5">On Patchification</h4> 
         <div class="columns is-centered has-text-justified">
 
           <div class="column is-4">
@@ -403,11 +404,11 @@
         <div class="content has-text-justified">
           <p>
           We train deep generative models (VDVAEs) with collage parameters as latent variables. The ELBO is calculated on the images decoded through the collage operator, given a sample of collage parameters. 
-          Collage parameter representations are "rate efficient" and generally significantly smaller than data dimensionality, resulting generative models that can be easier to optimize.
+          Collage parameter representations are "rate efficient" and generally smaller than data dimensionality, resulting generative models that can be easier to optimize.
         </p>
           <p>
-          Regardless of the image size used during training, introducing Neural Collages in a generative model allows for sampling at arbitrary resolution. Note that the details introduced
-          by the upsampling depend on the type of collage operator, for example augmentation transforms used to produce auxiliary patches from domain patches at each iteration. 
+          Regardless of the image size used during training, introducing Neural Collages in a generative model allows for sampling (decoding an image from a sample of collage parameters) at arbitrary resolution. Note that the details introduced by the upsampling procedure depend on the collage operator type: 
+          for example, augmentation transforms used to produce auxiliary patches from input patches at each iteration. 
         </p>
         </div>
         <div class="columns is-centered has-text-centered">
@@ -429,8 +430,8 @@
     <h4 class="title is-4">Neural Collages as Image Compressors</h4> 
     <div class="content has-text-justified">
       <p>
-      We train Neural Collages on random crops of a datasets of high-resolution aerial images. At test time, we use a pretrained encoder to compress images of different resolutions by applying it to
-      each crop individually. Compression only requires a single forward pass of a Neural Collage encoder, resulting in several orders of magnitude speedups over fractal compression and COIN.
+        We train Neural Collages on a random crops dataset of high-resolution aerial images. At test time, we use this pre-trained encoder to compress images of different resolutions through independent application on each crop. 
+        Encoding new images requires a single forward pass of a Neural Collage encoder, resulting in speedups of several orders of magnitude over fractal compression and COIN.
       </p>
       <p>
       To leverage similarity across the entire dataset, we introduce auxiliary input patches into a collage iteration (the "generate candidates" step in code). Better compression ratios
@@ -484,7 +485,7 @@
           Fractalizing (including training) takes less than a minute on a single GPU. Follow the notebook tutorial for more details!  
         </p>
           <p>
-            No author was harmed during the generation of these animations.
+            Disclaimer: No author was harmed during the generation of these animations.
           </p>
       <section class="hero is-light">
         <div class="hero-body">
@@ -542,7 +543,7 @@
     </p>
     </br>
     <p>
-      And yes, Neural Collages can be applied to point clouds (as the first IFSs of Barnsley et al.) to produce "true" fractals!
+      And yes, Neural Collages can be applied to point clouds (as the first IFSs of <a href="https://books.google.com/books/about/Fractals_Everywhere.html?id=oh7NoePgmOIC">Barnsley et al.</a>) to produce "true" fractals!
     </p>
     </div>
     <div class="column has-text-justified is-4">
