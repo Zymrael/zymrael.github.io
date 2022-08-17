@@ -21,7 +21,17 @@ body.sticky-bottom-footer { padding-bottom: 0; }
 
 .container { max-width: 800px; }
 
-.profile img { width: 100%; }
+.photo { width: 180px; object-fit: cover;}
+
+.social { text-align: left; }
+
+.social .contact-icons { font-size: 2.5rem; }
+
+.social .contact-icons a i::before { color: var(--global-text-color); -webkit-transition: all 0.2s ease-in-out; }
+
+.social .contact-icons a:hover i::before { color: var(--global-theme-color); }
+
+.social .contact-note { font-size: 0.8rem; }
 
 /****************************************************************************** Publications */
 /***************************************************************************** Projects */
@@ -42,7 +52,7 @@ a:hover:after, table.table a:hover:after { width: 100%; }
 
 .citation, .citation-number { color: var(--global-theme-color); }
 
-.desc { color: #5d5a8f; font-size: medium; margin-top: 0rem; margin-bottom: 1rem; }
+.desc { font-weight: 300; color: #ae26ae; font-size: medium; margin-top: 0rem; margin-bottom: 0.8rem; }
 
 .profile { margin-left: 1rem; width: 100%; }
 
@@ -96,16 +106,6 @@ a:hover:after, table.table a:hover:after { width: 100%; }
 
 .news table th { color: var(--global-text-color); }
 
-.social { text-align: center; }
-
-.social .contact-icons { font-size: 4rem; }
-
-.social .contact-icons a i::before { color: var(--global-text-color); -webkit-transition: all 0.2s ease-in-out; }
-
-.social .contact-icons a:hover i::before { color: var(--global-theme-color); }
-
-.social .contact-note { font-size: 0.8rem; }
-
 footer.fixed-bottom { background-color: var(--global-footer-bg-color); font-size: 0.75rem; }
 
 footer.fixed-bottom .container { color: var(--global-footer-text-color); padding-top: 9px; padding-bottom: 8px; }
@@ -130,7 +130,13 @@ footer.sticky-bottom { border-top: 1px solid #e8e8e8; padding-top: 40px; padding
 
 .post-list li a:hover { color: var(--global-theme-color); }
 
-.post-title { font-size: 28pt; }
+.post-title { font-size: 30pt; }
+
+.research { 
+    margin-top: 0.4cm}
+
+.affiliation-info { 
+    margin-top: 0.4cm}
 
 .pagination .page-item .page-link { color: var(--global-text-color); }
 
@@ -219,6 +225,8 @@ pre pre, pre code { background-color: transparent; border-radius: 0; padding: 0;
 code { color: var(--global-theme-color); background-color: var(--global-code-bg-color); border-radius: 3px; padding: 3px 3px; }
 
 html.transition, html.transition *, html.transition *:before, html.transition *:after { transition: all 750ms !important; transition-delay: 0 !important; }
+
+
 
 /******************************************************************************* Style overrides for distill blog posts. */
 d-byline { border-top-color: #e8e8e8 !important; }
