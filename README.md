@@ -1,5 +1,10 @@
-# Personal Website of Michael Poli (al-folio theme)
+### Michael Poli's Personal Website
 
-GitHub: Zymrael
-Google Scholar: link
-Twitter: link
+``
+bundle install && bundle exec jekyll serve --lsi
+```
+
+TODOs:
+- [ ] Writing page
+- [ ] Project pages (SS priors)
+- [ ] Update research and TL;DR

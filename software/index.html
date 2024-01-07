@@ -36,14 +36,6 @@
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
-
-<!-- Theming-->
-
-
-
-
-
-
     
 <!-- MathJax -->
 <script type="text/javascript">
@@ -85,43 +77,18 @@
           <!-- About -->
           <li class="nav-item ">
             <a class="nav-link" href="/">
-              about
-              
+              about 
             </a>
           </li>
           
-          <!-- Other pages -->
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          <li class="nav-item ">
-              <a class="nav-link" href="/contact/">
-                contact
-                
-              </a>
-          </li>
-          
-          
-          
+          <!-- Other pages -->        
           <li class="nav-item ">
               <a class="nav-link" href="/research/">
                 research
                 
               </a>
           </li>
-          
-          
-          
+                  
           <li class="nav-item active">
               <a class="nav-link" href="/software/">
                 software
@@ -130,11 +97,7 @@
                 
               </a>
           </li>
-          
-          
-          
-          
-          
+  
         </ul>
       </div>
     </div>
@@ -156,26 +119,81 @@
   <article>
     <div class="projects">
   
-  <!-- Display categorized projects -->
-    
-      <h2 class="category">PyTorch</h2>
-      
-      
-      <!-- Generate cards for each project -->
-      
-        <div class="grid">
+<h2 class="category"></h2>      
+<div class="grid">
           
-            <div class="grid-item">
+<div class="grid-item col-md-4">  
+  <a href="https://github.com/DiffEqML/torchdyn" target="_blank">
+  
+    <div class="card hoverable">
+      
+      <img src="/assets/img/stripedhyena.png" alt="project thumbnail" />
+      
+      <div class="card-body">
+        <h3 class="card-title text-lowercase">stripedhyena</h3>
+        <div>
+          <i class="fas fa-star"></i><span id="github-stars-count-stripedhyena"></span>
+        </div>
+        <p class="card-text">Code for StripedHyena-7B, a state-of-the-art beyond Transformer model.</p>
+        <div class="row ml-1 mr-1 p-0">
+          
+          <div class="github-icon">
+            <div class="icon" data-toggle="tooltip" title="Code Repository">
+              <a href="https://github.com/togethercomputer/stripedhyena" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="grid-item col-md-4">
   
   <a href="https://github.com/DiffEqML/torchdyn" target="_blank">
   
     <div class="card hoverable">
       
-      <img src="/assets/img/logo_small.png" alt="project thumbnail" />
+      <img src="/assets/img/safari.jpg" alt="project thumbnail" />
       
       <div class="card-body">
-        <h2 class="card-title text-lowercase">torchdyn</h2>
-        <p class="card-text">A PyTorch library dedicated to neural differential equations. [tutorials, benchmarks, models, numerics]</p>
+        <h3 class="card-title text-lowercase">safari</h3>
+        <div>
+          <i class="fas fa-star"></i><span id="github-stars-count-safari"></span>
+        </div>
+        <p class="card-text">Gated convolutions for sequence modeling. H3, Hyena architectures with training code, language, image and synthetic tasks.</p>
+        <div class="row ml-1 mr-1 p-0">
+          
+          <div class="github-icon">
+            <div class="icon" data-toggle="tooltip" title="Code Repository">
+              <a href="https://github.com/HazyResearch/safari" target="_blank"><i class="fab fa-github gh-icon"></i></a>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="grid-item col-md-4">
+  
+  <a href="https://github.com/DiffEqML/torchdyn" target="_blank">
+  
+    <div class="card hoverable">
+      
+      <img src="/assets/img/diffeqml_2.png" alt="project thumbnail" />
+      
+      <div class="card-body">
+        <h3 class="card-title text-lowercase">torchdyn</h3>
+        <div>
+          <i class="fas fa-star"></i><span id="github-stars-count-torchdyn"></span>
+        </div>
+
+        <p class="card-text">A PyTorch library for neural differential equations and hybridization of numerical methods and learning models.</p>
         <div class="row ml-1 mr-1 p-0">
           
           <div class="github-icon">
@@ -191,13 +209,8 @@
   </a>
 </div>
 
-          
-        </div>
-      
-    
-
   
-
+</div>
 </div>
 
 
@@ -214,15 +227,31 @@
   <div class="container mt-0">
     &copy; Copyright 2021 Michael  Poli.
     Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-
-    
-    
   </div>
 </footer>
 
+  <script>
+    // Function to fetch GitHub stars and update the placeholder
+    function fetchGitHubStars(repo, elementId) {
+      const apiUrl = `https://api.github.com/repos/${repo}`;
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const starsCount = data.stargazers_count;
+          document.getElementById(elementId).textContent = starsCount;
+        })
+        .catch(error => console.error('Error fetching GitHub stars:', error));
+    }
 
+    // Call the function for each repository card
+    window.addEventListener('load', () => {
+      fetchGitHubStars('DiffEqML/torchdyn', 'github-stars-count-torchdyn');
+      fetchGitHubStars('HazyResearch/safari', 'github-stars-count-safari');
+      fetchGitHubStars('togethercomputer/stripedhyena', 'github-stars-count-stripedhyena');
+    });
+  </script>
 
-  </body>
+</body>
 
   <!-- Bootsrap & MDB scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>

@@ -33,6 +33,49 @@ body.sticky-bottom-footer { padding-bottom: 0; }
 
 .social .contact-note { font-size: 0.8rem; }
 
+/* News styles */
+
+.news {
+    line-height: 15px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.news:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.news-name {
+    display: inline-block;
+    float: left;
+    width: 250px;
+    margin: 0 10.5px;
+    padding: 0;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.news-date {
+    font-weight: bold;
+    display: inline-block;
+    width: 100px; /* Adjust the width as needed */
+    margin-top: 12px;
+  }
+  
+  .news-desc {
+    display: inline-block;
+    vertical-align: center;
+    margin-left: 12px; /* Adjust the spacing as needed */
+    margin-top: 12px;
+    line-height: 22px;
+  }
+
 /****************************************************************************** Publications */
 /***************************************************************************** Projects */
 /******************************************************************************* Styles for the base elements of the theme. */
